@@ -8,14 +8,13 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // Use your email service
+  service: 'gmail',
   auth: {
-    user: 'redcollar@gmail.com', // Your email
-    pass: 'redcollar@123' // Your email password or app password
+    user: 'redcollar@gmail.com', 
+    pass: 'redcollar@123' 
   }
 });
 
-// Endpoint for sending reset password email
 app.post('/forgot-password', (req, res) => {
   const { email } = req.body;
 
